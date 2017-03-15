@@ -52,7 +52,7 @@ function isInteger(num) {
   //-10 -> true
   //otherwise return false
   //hint: you can solve this using Math.floor
-  return Math.floor(num) > 0;
+  return Math.floor(num) === num;
 }
 
 function fizzBuzz(num) {
@@ -146,12 +146,13 @@ function addNumbers(numbers) {
 function averageTestScore(testScores) {
   //testScores is an array.  Iterate over testScores and compute the average.
   //return the average
-  return 
+  return testScores.reduce((a , c) => a + c) / testScores.length;
 }
 
 function largestNumber(numbers) {
   //numbers is an array of integers
   //return the largest integer
+  return Math.max(...numbers);
 }
 
 //Do not modify code below this line.
