@@ -19,7 +19,7 @@ function greeting(language) {
   //language: 'Spanish' -> 'Hola!'
   //if language is undefined return 'Hello!'
 
-  if (language === ''German' ') {
+  if (language === 'German') {
     return 'Guten Tag!';
   } else if (language === 'English') { 
     return 'Hello!'; 
@@ -66,6 +66,8 @@ function fizzBuzz(num) {
     return 'fizz';
   } else if (num % 5 === 0) {
     return 'buzz';
+  } else {
+    return num;
   }
 }
 
@@ -80,7 +82,7 @@ function isPrime(num) {
     if (num === 2 || num === 3 || num === 5 || num === 7) return true;
     if (num % 2 === 0 || num % 3 === 0 || num % 5 === 0 || num % 7 === 0) return false;
                               // shortcut for loop for most numbers
-    for(let i = 2; i <= Math.ceil(Math.sqrt(num)); i++) {
+    for(var i = 2; i <= Math.ceil(Math.sqrt(num)); i++) {
         if (num % i === 0) return false;
  
     }
@@ -107,7 +109,7 @@ function incrementByOne(arr) {
   //arr is an array of integers  
   //increase each integer by one
   //return the array
-  return arr.map(x => x+1);
+  return arr.map(function(x) {return x + 1; });
 }
 
 function addItemToArray(arr, item) {
@@ -128,31 +130,31 @@ function wordsToSentence(words) {
   //return a string that is all of the words concatenated together
   //spaces need to be between each word
   //example: ['Hello', 'world!'] -> 'Hello world!'
-  return words.split(' ');
+  return words.join(' ');
 }
 
 function contains(arr, item) {
   //check to see if item is inside of arr
   //return true if it is, otherwise return false
-  return Boolean(arr.indexOf(item));
+  return Boolean(arr.indexOf(item) >= 0);
 }
 
 function addNumbers(numbers) {
   //numbers is an array of integers.
   //add all of the integers and return the value
-  return arr.reduce((a, c) => a + c);
+  return numbers.reduce(function (a, c) { return a + c; });
 }
 
 function averageTestScore(testScores) {
   //testScores is an array.  Iterate over testScores and compute the average.
   //return the average
-  return testScores.reduce((a , c) => a + c) / testScores.length;
+  return testScores.reduce(function (a , c) {return a + c; }) / testScores.length;
 }
 
 function largestNumber(numbers) {
   //numbers is an array of integers
   //return the largest integer
-  return Math.max(...numbers);
+  return Math.max.apply(null, numbers);
 }
 
 //Do not modify code below this line.
