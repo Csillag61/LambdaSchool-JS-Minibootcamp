@@ -118,7 +118,7 @@ function cacheFunction(cb) {
 			cache[x] = cb(x);
 			return cache[x];
 		}
-		};
+	};
 	// return function (x) { return (cache.hasOwnProperty(x)) ? cache[x] : cache[x] = cb(x), cache[x] };
 }
 
